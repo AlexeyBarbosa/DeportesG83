@@ -4,6 +4,8 @@ let app = express();
 const db = require("./config/db");
 
 
+app.use(express.json());
+
 app.use('/api', require('./routes/principalRoutes'));//se importan las rutas de paginas y se agrega la parte inicial de la url .../api/...
 
 app.use('/api/deportes', require('./routes/deportesRoutes'));
