@@ -1,20 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const eventosCtrl = require('../controllers/eventosCtrl');
 
-router.get('/list', function (req, res) {
-    res.send("Listar eventos");
-});
+router.post('/create', eventosCtrl.createEvento);
 
-router.post('/create', function (req, res) {
-    res.send("Crear evento");
-});
+router.get('/list', eventosCtrl.getEventosList);
 
-router.delete('/delete', function (req, res) {
-    res.send("Eliminar evento");
-});
+router.get('/:id', eventosCtrl.getEvento);
 
-router.put('/update', function (req, res) {
-    res.send("Actualizar evento");
-});
+router.put('/update', eventosCtrl.updateEvento);
+
+router.delete('/delete/:id', eventosCtrl.deleteEvento);
 
 module.exports = router;

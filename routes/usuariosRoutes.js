@@ -1,20 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const usuariosCtrl = require('../controllers/usuariosCtrl');
 
-router.get('/list', function (req, res) {
-    res.send("Listar usuarios");
-});
+router.post('/create', usuariosCtrl.createUsuario);
 
-router.post('/create', function (req, res) {
-    res.send("Crear usuario");
-});
+router.get('/list', usuariosCtrl.getUsuariosList);
 
-router.delete('/delete', function (req, res) {
-    res.send("Eliminar usuario");
-});
+router.get('/:id', usuariosCtrl.getUsuario);
 
-router.put('/update', function (req, res) {
-    res.send("Actualizar usuario");
-});
+router.put('/update', usuariosCtrl.updateUsuario);
+
+router.delete('/delete/:id', usuariosCtrl.deleteUsuario);
 
 module.exports = router;

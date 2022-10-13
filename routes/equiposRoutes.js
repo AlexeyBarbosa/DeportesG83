@@ -1,20 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const equiposCtrl = require('../controllers/equiposCtrl');
 
-router.get('/list', function (req, res) {
-    res.send("Listar equipos");
-});
+router.post('/create', equiposCtrl.createEquipo);
 
-router.post('/create', function (req, res) {
-    res.send("Crear equipo");
-});
+router.get('/list', equiposCtrl.getEquiposList);
 
-router.delete('/delete', function (req, res) {
-    res.send("Eliminar equipo");
-});
+router.get('/:id', equiposCtrl.getEquipo);
 
-router.put('/update', function (req, res) {
-    res.send("Actualizar equipo");
-});
+router.put('/update', equiposCtrl.updateEquipo);
+
+router.delete('/delete/:id', equiposCtrl.deleteEquipo);
 
 module.exports = router;
