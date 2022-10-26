@@ -24,6 +24,7 @@ const getEvento = async (req, res) => {
 }
 
 const createEvento = async (req, res) => {
+    console.log(req.body);
     let equipo1 = req.body.equipo1;
     let equipo2 = req.body.equipo2;
     let marcador1 = req.body.marcador1;

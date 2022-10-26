@@ -43,7 +43,6 @@ const createDeporte = async (req, res) => {
         }
         res.status(codigoServidor).json(mensaje);
     }
-
 }
 
 const updateDeporte = async (req, res) => {
