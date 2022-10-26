@@ -8,6 +8,10 @@ app.use(cors())
 app.use(express.json());
 app.use(express.static('public'))
 
+app.use('/', function (req, res) {
+    res.send("Inicio API");
+});
+
 app.use('/api', require('./routes/principalRoutes'));//se importan las rutas de paginas y se agrega la parte inicial de la url .../api/...
 
 app.use('/api/deportes', require('./routes/deportesRoutes'));
