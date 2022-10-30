@@ -1,4 +1,4 @@
-let puerto = 3000;
+let puerto = 8180;
 let express = require('express');
 let app = express();
 const cors = require('cors')
@@ -8,11 +8,7 @@ app.use(cors())
 app.use(express.json());
 app.use(express.static('public'))
 
-app.use('/', function (req, res) {
-    res.send("Inicio API");
-});
-
-app.use('/api', require('./routes/principalRoutes'));//se importan las rutas de paginas y se agrega la parte inicial de la url .../api/...
+app.use('/api', require('./routes/principalRoutes'));
 
 app.use('/api/deportes', require('./routes/deportesRoutes'));
 

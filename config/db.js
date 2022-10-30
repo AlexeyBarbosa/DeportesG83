@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const dbUrl = "mongodb+srv://admin:e3j710xpRTSTITcK@alexeybarbosa.tlg5r74.mongodb.net/deportes_g83?retryWrites=true&w=majority";
+//mongodb://localhost:27017/deportes_g83
+const dbUrl = "url";
 
 module.exports = () => {
     const conn = () => {
